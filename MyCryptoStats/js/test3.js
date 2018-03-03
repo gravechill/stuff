@@ -493,3 +493,7 @@ window.onclick = function(event) {
     }
   }
 }
+
+$('td').hover(function() {
+ $(this).parents('table').find('col:eq('+$(this).index()+')').toggleClass('hover');
+});

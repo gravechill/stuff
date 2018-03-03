@@ -71,9 +71,9 @@ tr:nth-child(odd) {
 }
 
 /* Focus */
-.hold {
-    background-color:blue;
-}
+col.hover {
+    background-color: lime);
+  }
 
 
 #Wallets {
