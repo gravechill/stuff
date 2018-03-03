@@ -65,18 +65,11 @@ th {
 
 /* Hover on colummn */
 col.hover {
-<<<<<<< HEAD
     background-color: rgba(172,255,0,1);
-	mix-blend-mode: exclusion;
-=======
-    background-color: #61BF3F;
->>>>>>> 8b29ecf524a12b3cee0e43a467e7f16e7fad03f6
-  }
-
+}
 
 #Wallets {
 	padding-bottom: 15px;
-	
 }
 
 #coins, #Crypto {
@@ -85,18 +78,4 @@ col.hover {
 
 #Crypto {
 	padding-left: 10px;
-}
-
-tr:nth-child(odd) {
-<<<<<<< HEAD
-	background-color: rgba(0,0,255,.1);
-}
-tr:nth-child(even) {
-	background-color: rgba(255,0,0,.1);
-=======
-	background-color: rgba(63,191,191,.25);
-}
-tr:nth-child(even) {
-	background-color: rgba(191,63,97,.25);
->>>>>>> 8b29ecf524a12b3cee0e43a467e7f16e7fad03f6
 }
