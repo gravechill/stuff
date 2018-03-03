@@ -52,7 +52,7 @@ th {
 	padding: 5px 0 5px 0;
 	background: lightblue;
 }
-
+/*
 tr:nth-child(even) {
 	 background:pink;
 }
@@ -65,14 +65,14 @@ tr:nth-child(odd) {
 	background-color:lime;
 }
 
-/* Hover on Cell */
+/* Hover on Cell */ 
 #Crypto td:hover {
     background-color:orange;
 }
 
 /* Focus */
 col.hover {
-    background-color: lime);
+    background-color: blue;
   }
 
 
