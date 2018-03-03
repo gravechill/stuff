@@ -55,17 +55,19 @@ th {
 
 /* Hover on Row */
 #Crypto tr:hover {
-	background-color: rgba(255,255,51,1);
+	background-color: rgba(3, 71, 72,.5);
 }
 
 /* Hover on Cell */ 
 #Crypto td:hover {
-    background-color: white;
+    background-color: rgba(3, 71, 72,1);
+	color:white;
 }
 
 /* Hover on colummn */
 col.hover {
-    background-color: rgba(255,255,51,1);
+    background-color: rgba(3, 71, 72,.5);
+	color:white;
 }
 
 #Wallets {
@@ -81,9 +83,9 @@ col.hover {
 }
 
 tr:nth-child(odd) {
-	background-color: rgba(63,191,191,.25);
+	background-color: rgba(20,129,186,0.25);
 }
 
 tr:nth-child(even) {
-	background-color: rgba(191,63,97,.25);
+	background-color: rgba(17,181,228,0.25);
 }
