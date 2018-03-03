@@ -44,6 +44,15 @@ table {
 	border-spacing: 0;
 }
 
+
+tr:nth-child(odd) {
+	background-color: cyan;
+}
+
+tr:nth-child(even) {
+	background-color: pink;
+}
+
 td {
 	padding: 5px 10px 5px 10px;
 }
@@ -80,10 +89,3 @@ col.hover {
 	padding-left: 10px;
 }
 
-tr:nth-child(odd) {
-	background-color: rgba(63,191,191,.25);
-}
-
-tr:nth-child(even) {
-	background-color: rgba(191,63,97,.25);
-}
