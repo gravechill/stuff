@@ -1,0 +1,218 @@
+<!doctype html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>My Crypto Stats</title>
+        <meta name="This is a random description I'm using..." content="The HTML5 Herald">
+        <meta name="Shommey" content="SitePoint">
+        <!--koment-->
+        <link rel="stylesheet" href="css/style.css">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/test3.js"></script>
+        <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+    </head>
+
+    <body>
+        <div id=Wallets>
+
+            <TABLE>
+                <CAPTION>Wallets</CAPTION>
+
+                <TR>
+                    <th>Wallet</th>
+                    <th>Coins</th>
+                    <th>USD</th>
+                    <th>EUR</th>
+                </TR>
+
+                <TR>
+                    <th>ETH</th>
+                    <TD id="eth1ballance"></TD>
+                    <TD id="eth1tousd"></TD>
+                    <td id="eth1toeur"></td>
+                </TR>
+
+                <TR>
+                    <th>ETC</th>
+                    <TD id="etc1ballance"></TD>
+                    <TD id="etc1tousd"></TD>
+                    <td id="etc1toeur"></td>
+                </TR>
+
+                <tr>
+                    <th>SIA</th>
+                    <TD id="sia1ballance"></TD>
+                    <TD id="sia1tousd"></TD>
+                    <td id="sia1toeur"></td>
+                </tr>
+
+            </TABLE>
+        </div>
+        
+        <div id=coins>
+
+            <table>
+                <Caption>Coins to Fiat</Caption>
+                <TR>
+                    <th>&nbsp</th>
+                    <th>EUR</th>
+                    <th>USD</th>
+                </TR>
+
+                <TR>
+                    <th>BTC</th>
+                    <TD id="btceur"></TD>
+                    <TD id="btcusd"></TD>
+                </TR>
+
+                <TR>
+                    <th>ETH</th>
+                    <TD id="etheur"></TD>
+                    <TD id="ethusd"></TD>
+                </TR>
+
+                <tr>
+                    <th>ETC</th>
+                    <td id="etceur"></td>
+                    <td id="etcusd"></td>
+                </tr>
+
+                <tr>
+                    <th>ZCASH</th>
+                    <td id="zeceur"></td>
+                    <td id="zecusd"></td>
+                </tr>
+
+                <tr>
+                    <th>Monero</th>
+                    <td id="xmreur"></td>
+                    <td id="xmrusd"></td>
+                </tr>
+
+                <tr>
+                    <th>SIA coin</th>
+                    <td id="siaeur"></td>
+                    <td id="siausd"></td>
+                </tr>
+            </table>
+         </div>   
+            <div id=Crypto>
+            <table>
+                <Caption>Crypto to Crypto (shapeshift.io)</Caption>
+                <TR>
+                    <th>&nbsp</th>
+                    <th>BTC</th>
+                    <th>ETH</th>
+                    <th>ETC</th>
+                    <th>ZEC</th>
+                    <th>Monero</th>
+                    <th>Sia</th>
+                </TR>
+
+                <TR>
+                    <th>BTC</th>
+                    <TD id="btc2btc"></TD>
+                    <TD id="btc2eth"></TD>
+                    <TD id="btc2etc"></TD>
+                    <TD id="btc2zec"></TD>
+                    <TD id="btc2xmr"></TD>
+                    <TD id="btc2sia"></TD>
+                </TR>
+
+                <TR>
+                    <th>ETH</th>
+                    <TD id="eth2btc"></TD>
+                    <TD id="eth2eth"></TD>
+                    <TD id="eth2etc"></TD>
+                    <TD id="eth2zec"></TD>
+                    <TD id="eth2xmr"></TD>
+                    <TD id="eth2sia"></TD>
+                </TR>
+
+                <tr>
+                    <th>ETC</th>
+                    <td id="etc2btc"></td>
+                    <td id="etc2eth"></td>
+                    <TD id="etc2etc"></TD>
+                    <TD id="etc2zec"></TD>
+                    <TD id="etc2xmr"></TD>
+                    <TD id="etc2sia"></TD>
+                </tr>
+
+                <tr>
+                    <th>ZCASH</th>
+                    <td id="zec2btc"></td>
+                    <td id="zec2eth"></td>
+                    <TD id="zec2etc"></TD>
+                    <TD id="zec2zec"></TD>
+                    <TD id="zec2xmr"></TD>
+                    <TD id="zec2sia"></TD>
+                </tr>
+
+                <tr>
+                    <th>Monero</th>
+                    <td id="xmr2btc"></td>
+                    <td id="xmr2eth"></td>
+                    <TD id="xmr2etc"></TD>
+                    <TD id="xmr2zec"></TD>
+                    <TD id="xmr2xmr"></TD>
+                    <TD id="xmr2sia"></TD>
+                </tr>
+
+                <tr>
+                    <th>SIA coin</th>
+                    <td id="sia2btc"></td>
+                    <td id="sia2eth"></td>
+                    <TD id="sia2etc"></TD>
+                    <TD id="sia2zec"></TD>
+                    <TD id="sia2xmr"></TD>
+                    <TD id="sia2sia"></TD>
+                </tr>
+            </table>
+        </div>
+		<div id="PoolStats">
+		           <div class="CoinSelect">
+                <button onclick="DropTheButton()" class="dropbtn">Select Coin</button>
+                <div id="Dropdown" class="DropdownContent">
+                    <button onclick="ETHPoolStats()">ETH</button>
+                    <button onclick="ETCPoolStats()">ETC</button>
+                </div>
+            </div>
+            <table>
+                <caption>Pool Stats</caption>
+                <tr>
+                    <td>Approx. Earnings</td>
+                    <td id="ApproxEarn"></td>
+                </tr>
+                
+                <tr>
+                    <td>Balance</td>
+                    <td id="PoolBalance"></td>
+                </tr>
+                
+                <tr>
+                    <td>Reported Hashrate</td>
+                    <td id="ReportedHashrate"></td>
+                </tr>
+                
+                <tr>
+                    <td>Calculated Hashrate</td>
+                    <td id="CalculatedHashrate"></td>
+                </tr>
+                
+                <tr>
+                    <td>Avg. 12h Hashrate</td>
+                    <td id="AvarageHashrate"></td>
+                </tr>
+                
+                
+            </table>
+        </div>
+    </body>
+
+</html>
