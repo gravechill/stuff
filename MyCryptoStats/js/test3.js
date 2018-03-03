@@ -494,7 +494,9 @@ window.onclick = function(event) {
   }
 }
 
-$('td').click(function() {
+$(function() {
+	$('td').hover(function() {
 	console.log("hovering over td");
- $(this).parents('table').find('col:eq('+$(this).index()+')').toggleClass('hover');
+	$(this).parents('table').find('col:eq('+$(this).index()+')').toggleClass('hover');
+	});
 });
