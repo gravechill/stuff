@@ -55,20 +55,22 @@ th {
 
 tr:nth-child(odd) {
 	background-color: rgba(63,191,191,.25);
+	mix-blend-mode: hard-light;
 }
 
 tr:nth-child(even) {
 	background-color: rgba(191,63,97,.25);
+	mix-blend-mode: hard-light;
 }
 
 /* Hover on Row */
 #Crypto tr:hover {
-	background-color:#61BF3F;
+	background-color: rgba(172,255,0,1);
 }
 
 /* Hover on Cell */ 
 #Crypto td:hover {
-    background-color:orange;
+    background-color: gray;
 }
 
 /* Hover on colummn */
