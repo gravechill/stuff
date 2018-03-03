@@ -75,7 +75,7 @@ table {
 	border:collapse;
 }
 
-table,tr,th {
+table, tr, th {
 	border: 1px solid black;
 }
 
@@ -114,12 +114,4 @@ tr:nth-child(odd) {
 
 tr:nth-child(even) {
 	background-color: rgba(17,181,228,.7);
-}
-
-#Crypto tr:nth-child(odd) {
-	background-color: rgba(20,129,186,0.25);
-}
-
-#Crypto tr:nth-child(even) {
-	background-color: rgba(17,181,228,0.25);
 }
