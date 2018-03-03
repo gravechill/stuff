@@ -53,6 +53,14 @@ th {
 	background: lightblue;
 }
 
+tr:nth-child(odd) {
+	background-color: rgba(63,191,191,.25);
+}
+
+tr:nth-child(even) {
+	background-color: rgba(191,63,97,.25);
+}
+
 /* Hover on Row */
 #Crypto tr:hover {
 	background-color:#61BF3F;
@@ -78,12 +86,4 @@ col.hover {
 
 #Crypto {
 	padding-left: 10px;
-}
-
-tr:nth-child(odd) {
-	background-color: rgba(63,191,191,.25);
-}
-
-tr:nth-child(even) {
-	background-color: rgba(191,63,97,.25);
 }
