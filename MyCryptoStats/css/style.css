@@ -27,7 +27,7 @@
     z-index: 1;
 }
 /* Change color of dropdown links on hover */
-.DropdownContent button:hover {background-color: #f1f1f1}
+.DropdownContent button:hover {background-color: #f1f1f1;}
     
 /* Links inside the dropdown */
 .DropdownContent button {
@@ -52,17 +52,10 @@ th {
 	padding: 5px 0 5px 0;
 	background: lightblue;
 }
-/*
-tr:nth-child(even) {
-	 background:pink;
-}
-tr:nth-child(odd) {
-     background:cyan;
-}
 
 /* Hover on Row */
 #Crypto tr:hover {
-	background-color:lime;
+	background-color:#61BF3F;
 }
 
 /* Hover on Cell */ 
@@ -70,10 +63,14 @@ tr:nth-child(odd) {
     background-color:orange;
 }
 
-/* Focus */
+/* Hover on colummn */
 col.hover {
+<<<<<<< HEAD
     background-color: rgba(172,255,0,1);
 	mix-blend-mode: exclusion;
+=======
+    background-color: #61BF3F;
+>>>>>>> 8b29ecf524a12b3cee0e43a467e7f16e7fad03f6
   }
 
 
@@ -91,8 +88,15 @@ col.hover {
 }
 
 tr:nth-child(odd) {
+<<<<<<< HEAD
 	background-color: rgba(0,0,255,.1);
 }
 tr:nth-child(even) {
 	background-color: rgba(255,0,0,.1);
+=======
+	background-color: rgba(63,191,191,.25);
+}
+tr:nth-child(even) {
+	background-color: rgba(191,63,97,.25);
+>>>>>>> 8b29ecf524a12b3cee0e43a467e7f16e7fad03f6
 }
