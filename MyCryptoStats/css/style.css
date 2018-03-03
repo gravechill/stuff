@@ -109,11 +109,11 @@ col.hover {
 }
 
 tr:nth-child(odd) {
-	background-color: rgba(20,129,186,1);
+	background-color: rgba(20,129,186,.7);
 }
 
 tr:nth-child(even) {
-	background-color: rgba(17,181,228,1);
+	background-color: rgba(17,181,228,.7);
 }
 
 #Crypto tr:nth-child(odd) {
