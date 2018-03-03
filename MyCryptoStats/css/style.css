@@ -53,6 +53,14 @@ th {
 	background: lightblue;
 }
 
+table {
+	border:collapse;
+}
+
+table,tr,th {
+	border: 1px solid black;
+}
+
 /* Hover on Row */
 #Crypto tr:hover {
 	background-color: rgba(3, 71, 72,.5);
