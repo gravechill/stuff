@@ -1,3 +1,7 @@
+@font-face {
+	font-family: Open Sans;
+	src: url(../fonts/OpenSans-Regular.ttf); }
+
 /* Dropdown Button */
 .dropbtn {
     background-color: #3498DB;
@@ -6,6 +10,9 @@
     font-size: 16px;
     border: none;
     cursor: pointer;
+	font-family: "Open Sans";
+	font-size: 14px;
+
 }
 
 /* Dropdown button on hover & focus */
@@ -17,6 +24,9 @@
 .CoinSelect {
     position: relative;
     display: inline-block;
+	font-family: "Open Sans";
+	font-size: 14px;
+
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -25,6 +35,9 @@
     position: absolute;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+	font-family: "Open Sans";
+	font-size: 14px;
+
 }
 /* Change color of dropdown links on hover */
 .DropdownContent button:hover {background-color: #f1f1f1;}
@@ -37,11 +50,16 @@
     text-decoration: none;
     display: block;
 	border:none;
+	font-family: "Open Sans";
+
 }
 .show {display:block;}
 
 table {
 	border-spacing: 0;
+	font-family: "Open Sans";
+	font-size: 14px;
+
 }
 
 td {
@@ -63,7 +81,7 @@ table,tr,th {
 
 /* Hover on Row */
 #Crypto tr:hover {
-	background-color: rgba(3, 71, 72,.5);
+	background-color: rgba(3, 71, 72,.65);
 }
 
 /* Hover on Cell */ 
