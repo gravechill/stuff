@@ -493,7 +493,3 @@ window.onclick = function(event) {
     }
   }
 }
-
-$ (function()) {
-    document.getElementById("btc2btc").classList.toggle("hold");
-}
