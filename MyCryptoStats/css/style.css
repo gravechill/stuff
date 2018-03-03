@@ -27,7 +27,7 @@
     z-index: 1;
 }
 /* Change color of dropdown links on hover */
-.DropdownContent button:hover {background-color: #f1f1f1}
+.DropdownContent button:hover {background-color: #f1f1f1;}
     
 /* Links inside the dropdown */
 .DropdownContent button {
@@ -52,7 +52,7 @@ th {
 	padding: 5px 0 5px 0;
 	background: lightblue;
 }
-/*
+
 tr:nth-child(even) {
 	 background:pink;
 }
@@ -70,7 +70,7 @@ tr:nth-child(odd) {
     background-color:orange;
 }
 
-/* Focus */
+/* Hover on colummn */
 col.hover {
     background-color: blue;
   }
