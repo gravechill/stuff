@@ -2,6 +2,10 @@
 	font-family: Open Sans;
 	src: url(../fonts/OpenSans-Regular.ttf); }
 
+html, body {
+	width: auto;
+}
+
 /* Dropdown Button */
 .dropbtn {
     background-color: #3498DB;
@@ -59,7 +63,7 @@ table {
 	border-spacing: 0;
 	font-family: "Open Sans";
 	font-size: 14px;
-
+	border:collapse;
 }
 
 td {
@@ -67,17 +71,24 @@ td {
 }
 
 th {
-	padding: 5px 0 5px 0;
+	padding: 5px 5px 5px 5px;
 	background: lightblue;
-}
-
-table {
-	border:collapse;
 }
 
 table, tr, th {
 	border: 1px solid black;
 }
+
+tr:nth-child(odd) {
+	background-color: rgba(20,129,186,.7);
+}
+
+tr:nth-child(even) {
+	background-color: rgba(17,181,228,.7);
+}
+
+caption {
+font-size: 18px;}
 
 /* Hover on Row */
 #Crypto tr:hover {
@@ -98,21 +109,22 @@ col.hover {
 }
 
 #Wallets {
+	display: table;
+	padding-bottom: 15px;
+	margin: 0 auto;
+}
+
+#Convert {
+	display: table;
+	margin: 0 auto;
 	padding-bottom: 15px;
 }
 
 #coins, #Crypto {
-	display:inline-table;
+	display: inline-table;
+	margin: 0 auto;
 }
 
 #Crypto {
 	padding-left: 10px;
-}
-
-tr:nth-child(odd) {
-	background-color: rgba(20,129,186,.7);
-}
-
-tr:nth-child(even) {
-	background-color: rgba(17,181,228,.7);
 }
