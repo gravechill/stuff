@@ -55,12 +55,12 @@ th {
 
 /* Hover on Row */
 #Crypto tr:hover {
-	background-color: rgba(172,255,0,1);
+	background-color:#61BF3F;
 }
 
 /* Hover on Cell */ 
-/*#Crypto td:hover {
-    background-color: rgba(172,255,0,1);;
+#Crypto td:hover {
+    background-color:orange;
 }
 
 /* Hover on colummn */
@@ -82,10 +82,8 @@ col.hover {
 
 tr:nth-child(odd) {
 	background-color: rgba(63,191,191,.25);
-	mix-blend-mode: hard-light;
 }
 
 tr:nth-child(even) {
 	background-color: rgba(191,63,97,.25);
-	mix-blend-mode: hard-light;
 }
