@@ -86,7 +86,8 @@ table, tr, th {
 
 /* Hover on Cell */ 
 #Crypto td:hover {
-    background-color: rgba(3, 71, 72,1);
+    background-color: rgba(17,77,144,1);
+	/*rgba(3, 71, 72,1);*/
 	color:white;
 }
 
