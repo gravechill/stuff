@@ -4,6 +4,7 @@
 
 html, body {
 	width: auto;
+	background: yellow;
 }
 
 /* Dropdown Button */
@@ -60,6 +61,7 @@ html, body {
 .show {display:block;}
 
 table {
+	background-color: white;
 	border-spacing: 0;
 	font-family: "Open Sans";
 	font-size: 14px;
