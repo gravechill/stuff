@@ -93,7 +93,7 @@ caption {
 font-size: 18px;}
 
 /* Hover on Row */
-#Crypto tr:hover {
+tr:hover {
 	background-color: rgba(20, 129, 186,1);
 }
 

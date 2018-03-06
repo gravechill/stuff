@@ -184,7 +184,8 @@
             </table>
         </div>
 	</div>
-		<div id="PoolStats">
+		<div id=MiningStats>
+			<div id="PoolStats">
 		           <div class="CoinSelect">
                 <button onclick="DropTheButton()" class="dropbtn">Select Coin</button>
                 <div id="Dropdown" class="DropdownContent">
@@ -222,6 +223,32 @@
                 
             </table>
         </div>
+			<div id=Networks>
+				<table>
+					<caption>Network Stats</caption>
+					<tr>
+						<th></th>
+						<th>ETH</th>
+						<th>ETC</th>
+					</tr>
+					<tr>
+						<td>Difficulty</td>
+						<td id="ethdiff"></td>
+						<td id="etcdiff"></td>
+					</tr>
+					<tr>
+						<td>Last Block</td>
+						<td id="ethlastblock"></td>
+						<td id="etclastblock"></td>
+					</tr>
+					<tr>
+						<td>Block Reward</td>
+						<td id="ethblockrwd"></td>
+						<td id="etcblockrwd"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
     </body>
 
 </html>

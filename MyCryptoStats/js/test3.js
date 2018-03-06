@@ -439,9 +439,12 @@
 		   document.getElementById("xmr2sia").innerHTML = result;
 
    });
-
 });
 
+//Network Stats
+
+
+//Select Coin Button Dropdown
 function DropTheButton() {
     document.getElementById("Dropdown").classList.toggle("show");
 }
