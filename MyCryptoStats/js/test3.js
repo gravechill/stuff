@@ -445,6 +445,10 @@ function ETHAPI() {
     return 'https://api.nanopool.org/v1/eth/blocks/0/1';
 }
 
+function ETCAPI() {
+    return 'https://api.nanopool.org/v1/etc/blocks/0/1';
+}
+
 //Network Stats
 	//ETH difficulty and last block
     $(function() {
@@ -459,7 +463,7 @@ function ETHAPI() {
 	//ETC difficulty and last block
     $(function() {
 
-   $.getJSON(ETHAPI(), function(data) {
+   $.getJSON(ETCAPI(), function(data) {
 		   document.getElementById("etcdiff").innerHTML = data.data[0].difficulty;
 		   document.getElementById("etclastblock").innerHTML = data.data[0].number;
 
