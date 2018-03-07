@@ -441,11 +441,15 @@
    });
 });
 
+function ETHAPI() {
+    return 'https://api.nanopool.org/v1/eth/blocks/0/1';
+}
+
 //Network Stats
 	//ETH difficulty and last block
     $(function() {
 
-   $.getJSON('https://api.nanopool.org/v1/eth/blocks/0/1', function(data) {
+   $.getJSON(ETHAPI(), function(data) {
 		   document.getElementById("ethdiff").innerHTML = data.data[0].difficulty;
 		   document.getElementById("ethlastblock").innerHTML = data.data[0].number;
 
@@ -455,7 +459,7 @@
 	//ETC difficulty and last block
     $(function() {
 
-   $.getJSON('https://api.nanopool.org/v1/etc/blocks/0/1', function(data) {
+   $.getJSON(ETHAPI(), function(data) {
 		   document.getElementById("etcdiff").innerHTML = data.data[0].difficulty;
 		   document.getElementById("etclastblock").innerHTML = data.data[0].number;
 
