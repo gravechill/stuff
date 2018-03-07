@@ -446,8 +446,8 @@
     $(function() {
 
    $.getJSON('https://api.nanopool.org/v1/eth/blocks/0/1', function(data) {
-		   document.getElementById("ethdiff").innerHTML = data.data.difficulty;
-		   document.getElementById("ethlastblock").innerHTML = result;
+		   document.getElementById("ethdiff").innerHTML = data.data[0].difficulty;
+		   document.getElementById("ethlastblock").innerHTML = data.data[0].number;
 
    });
 
@@ -456,8 +456,8 @@
     $(function() {
 
    $.getJSON('https://api.nanopool.org/v1/etc/blocks/0/1', function(data) {
-		   document.getElementById("etcdiff").innerHTML = data.data.difficulty;
-		   document.getElementById("etclastblock").innerHTML = result;
+		   document.getElementById("etcdiff").innerHTML = data.data[0].difficulty;
+		   document.getElementById("etclastblock").innerHTML = data.data[0].number;
 
    });
 
