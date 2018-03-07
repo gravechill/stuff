@@ -442,7 +442,26 @@
 });
 
 //Network Stats
+	//ETH difficulty and last block
+    $(function() {
 
+   $.getJSON('https://api.nanopool.org/v1/eth/blocks/0/1', function(data) {
+		   document.getElementById("ethdiff").innerHTML = data.data.difficulty;
+		   document.getElementById("ethlastblock").innerHTML = result;
+
+   });
+
+});
+	//ETC difficulty and last block
+    $(function() {
+
+   $.getJSON('https://api.nanopool.org/v1/etc/blocks/0/1', function(data) {
+		   document.getElementById("etcdiff").innerHTML = data.data.difficulty;
+		   document.getElementById("etclastblock").innerHTML = result;
+
+   });
+
+});
 
 //Select Coin Button Dropdown
 function DropTheButton() {
