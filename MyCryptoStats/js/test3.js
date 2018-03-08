@@ -451,11 +451,12 @@ function ETCAPI() {
 
 //Network Stats
 	//ETH difficulty and last block
-    $(function() {
+$(function() {
 
    $.getJSON(ETHAPI(), function(data) {
 		   document.getElementById("ethdiff").innerHTML = data.data[0].difficulty;
 		   document.getElementById("ethlastblock").innerHTML = data.data[0].number;
+		  $("#ethlastblock").attr("href", "https://etherscan.io/block/" + data.data[0].number)
 
    });
 
@@ -466,6 +467,7 @@ function ETCAPI() {
    $.getJSON(ETCAPI(), function(data) {
 		   document.getElementById("etcdiff").innerHTML = data.data[0].difficulty;
 		   document.getElementById("etclastblock").innerHTML = data.data[0].number;
+		   $("#etclastblock").attr("href", "https://gastracker.io/block/" + data.data[0].number)
 
    });
 

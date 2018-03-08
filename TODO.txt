@@ -1,0 +1,34 @@
+// Fixes and updates ASAP
+* Show difficulty number appropriately (Network Stats)
+* Replace API to get last block number (get netwrok last block, not last block mined by pool)
+* Extract difficulty from last network block (use etherscan.io, nanopool might have same thing if block requested by number)
+* Hyperlink wallets to blockchain explorer
+* CSS on hyperlinks
+
+
+// Overall
+* Get Claymore API
+* Get difficulty and prices graphs
+* Set variabiles (addresses, pool(s), coins) to load from different, more user friendly files (separate config file)
+* Calculate transaction fees (gas and gwei price)
+
+// Long Run
+* Show Claymore API
+* Show Aprrox earnings based on hashrate for coins, independent from Pool stats (Approx Earnings is using nanopool calculator API)
+	Claymore's API, Approx earnings for both (or more) coins always visble, then select coin to view mining stats from pool
+	Note: Stats from pool colud include graphs
+* Overall Design and CSS
+* Hamburger side menu with options to set API's and other variabiles
+	ex. Add more wallets to watch (dynamic wallets table), different coins too
+* Calculate most profitable coin to mine
+* Responsive mobile page
+* Dynamic table for Crypto to Crypto exchange
+
+// Maybe one day
+* Add different pool API's
+* Add different miner API's
+* Integrate shapeshift.io (exchange coins directly without going to shapeshift)
+* If it grows so much it needs server:
+	Make use of databases
+	Make TCP/IP raw request for miner API without need for monitor server on rig
+* Mining page for mutiple rigs, showing stats for each rig
