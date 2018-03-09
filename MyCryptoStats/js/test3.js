@@ -443,24 +443,28 @@ function GetETCprices() {
 
 //Etherscan LastBlock
 var ethlastblock
+var ethhexblock
 function GetLastBlockFromEth(callback) {
 
     $.getJSON('https://api.etherscan.io/api?module=proxy&action=eth_blockNumber&apikey=CNAVZM8H9J3Q2HWRR553Q7BYANFZRGK79J', function(data) {
-        var hexblock = data.result;
-        ethlastblock = parseInt(hexblock);
-        console.log("GET LAST BLOCK FROM ETHERSCAN:", ethlastblock);
+        ethhexblock = data.result;
+        ethlastblock = parseInt(ethhexblock);
         callback();
     });
  };
 
+ GetLastBlockFromEth(ETHAPI);
+
 // Network API
 function ETHAPI() {
-    return 'https://api.etherscan.io/api?module=proxy&action=eth_getBlockByNumber&tag=0x10d4f&boolean=true&apikey=CNAVZM8H9J3Q2HWRR553Q7BYANFZRGK79J';
+    console.log("Dynamic block", ethhexblock);
+    return "https://api.etherscan.io/api?module=proxy&action=eth_getBlockByNumber&tag=" + ethhexblock + "&boolean=true&apikey=CNAVZM8H9J3Q2HWRR553Q7BYANFZRGK79J";
 }
 
 function ETCAPI() {
     return 'https://api.nanopool.org/v1/etc/blocks/0/1';
 }
+
 
 ////Network Stats
 //ETH difficulty and last block
@@ -471,14 +475,11 @@ $(function() {
            var decdiff = parseInt(hexdiff);
 		   document.getElementById("ethdiff").innerHTML = decdiff;
            document.getElementById("ethlastblock").innerHTML = ethlastblock;
-           console.log("Upis u tabelu", ethlastblock);
 		  $("#ethlastblock").attr("href", "https://etherscan.io/block/" + ethlastblock)
 
    });
 
 });
-
-GetLastBlockFromEth(ETHAPI);
 
 //ETC difficulty and last block
 $(function() {
