@@ -441,6 +441,18 @@
    });
 });
 
+//Etherscan LastBlock
+var ethlastblock
+$(function GetLastBlockFromEth() {
+
+    $.getJSON('https://api.etherscan.io/api?module=proxy&action=eth_blockNumber&apikey=CNAVZM8H9J3Q2HWRR553Q7BYANFZRGK79J', function(data, ETHAPI) {
+        var hexblock = data.result;
+        ethlastblock = parseInt(hexblock);
+        console.log("GET LAST BLOCK FROM ETHERSCAN:", ethlastblock);
+    });
+ });
+
+// Network API
 function ETHAPI() {
     return 'https://api.nanopool.org/v1/eth/blocks/0/1';
 }
@@ -455,7 +467,8 @@ $(function() {
 
    $.getJSON(ETHAPI(), function(data) {
 		   document.getElementById("ethdiff").innerHTML = data.data[0].difficulty;
-		   document.getElementById("ethlastblock").innerHTML = data.data[0].number;
+           document.getElementById("ethlastblock").innerHTML = ethlastblock;
+           console.log("Upis u tabelu", ethlastblock);
 		  $("#ethlastblock").attr("href", "https://etherscan.io/block/" + data.data[0].number)
 
    });
@@ -527,6 +540,7 @@ window.onclick = function(event) {
   }
 }
 
+//Hover column (Crypto2Crypto table)
 $(function() {
 	$('td').hover(function() {
 	$(this).parents('table').find('col:eq('+$(this).index()+')').toggleClass('hover');
