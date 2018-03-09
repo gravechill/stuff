@@ -453,14 +453,9 @@ function GetLastBlockFromEth(callback) {
     });
  };
 
- GetLastBlockFromEth(ETHAPI);
+ GetLastBlockFromEth(WriteDiff);
 
 // Network API
-function ETHAPI() {
-    console.log("Dynamic block", ethhexblock);
-    return "https://api.etherscan.io/api?module=proxy&action=eth_getBlockByNumber&tag=" + ethhexblock + "&boolean=true&apikey=CNAVZM8H9J3Q2HWRR553Q7BYANFZRGK79J";
-}
-
 function ETCAPI() {
     return 'https://api.nanopool.org/v1/etc/blocks/0/1';
 }
@@ -468,9 +463,10 @@ function ETCAPI() {
 
 ////Network Stats
 //ETH difficulty and last block
-$(function() {
+function WriteDiff() {
 
-   $.getJSON(ETHAPI(), function(data) {
+   $.getJSON("https://api.etherscan.io/api?module=proxy&action=eth_getBlockByNumber&tag=" + ethhexblock + "&boolean=true&apikey=CNAVZM8H9J3Q2HWRR553Q7BYANFZRGK79J", function(data) {
+            console.log(ethhexblock);
            var hexdiff = data.result.difficulty;
            var decdiff = parseInt(hexdiff);
 		   document.getElementById("ethdiff").innerHTML = decdiff;
@@ -479,7 +475,7 @@ $(function() {
 
    });
 
-});
+};
 
 //ETC difficulty and last block
 $(function() {
