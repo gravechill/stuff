@@ -1,6 +1,6 @@
 //WALLETS
 //ETH Wallet 1 Ballance
-    $(function(callback) {
+ function GetETHballance(callback) {
 
 
    var result;
@@ -10,15 +10,16 @@
        //$.each(data.result, function(i, f) {
           var balance = data.ETH.balance;
            //$(balance).appendTo("#accbalance");
-		   document.getElementById("eth1ballance").innerHTML = data.ETH.balance;
+           document.getElementById("eth1ballance").innerHTML = data.ETH.balance;
+           callback();
      //});
 
    });
 
-});
+};
 
 //ETC Wallet 1 Ballance
-    $(function() {
+function GetETCballance(callback) {
 
 
    var result;
@@ -28,24 +29,25 @@
        //$.each(data.result, function(i, f) {
           var balance = data.ether;
            //$(balance).appendTo("#accbalance");
-		   document.getElementById("etc1ballance").innerHTML = data.balance.ether;
+           document.getElementById("etc1ballance").innerHTML = data.balance.ether;
+           callback();
      //});
 
    });
 
-});
+};
 
 
 //CRYPTO TO FIAT TABLE
 //ETH to USD and EUR
-    $(function() {
+function GetETHprices() {
 
    $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD,EUR', function(data) {
        //$.each(data.result, function(i, f) {
 		  var eth_balance;
 		   document.getElementById("ethusd").innerHTML = data.USD;
 		   document.getElementById("etheur").innerHTML = data.EUR;
-		   setTimeout(function() {
+		   //setTimeout(function() {
 			eth_balance = document.getElementById("eth1ballance").innerHTML;
 			var usd = eth_balance * data.USD;
 			var calculatedUsd = usd.toFixed(2);
@@ -53,11 +55,12 @@
 			var calculatedEur = eur.toFixed(2);
 			document.getElementById("eth1tousd").innerHTML = calculatedUsd;
 			document.getElementById("eth1toeur").innerHTML = calculatedEur;
-     },500);
+     });
 
-   });
+   };
 
-});
+
+GetETHballance(GetETHprices);
 
 //BTC to USD and EUR
     $(function() {
@@ -79,18 +82,16 @@
 });
 
 //ETC to USD and EUR
-    $(function() {
+function GetETCprices() {
 
 
    var usd;
    var eur;
 
    $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=ETC&tsyms=USD,EUR', function(data) {
-       //$.each(data.result, function(i, f) {
 		  var etc_balance;
 		   document.getElementById("etcusd").innerHTML = data.USD;
 		   document.getElementById("etceur").innerHTML = data.USD;
-		   setTimeout(function() {
 		       etc_balance = document.getElementById("etc1ballance").innerHTML;
 			    var usd = etc_balance * data.USD;
 				var calculatedUsd = usd.toFixed(2);
@@ -98,12 +99,11 @@
 				var calculatedEur = eur.toFixed(2);
 		       document.getElementById("etc1tousd").innerHTML = calculatedUsd;
 		       document.getElementById("etc1toeur").innerHTML = calculatedEur;
-		  },500);
-     //});
+		  });
 
-   });
+   };
 
-});
+   GetETCballance(GetETCprices);
 
 //ZEC to USD and EUR
     $(function() {
@@ -443,18 +443,19 @@
 
 //Etherscan LastBlock
 var ethlastblock
-$(function GetLastBlockFromEth() {
+function GetLastBlockFromEth(callback) {
 
-    $.getJSON('https://api.etherscan.io/api?module=proxy&action=eth_blockNumber&apikey=CNAVZM8H9J3Q2HWRR553Q7BYANFZRGK79J', function(data, ETHAPI) {
+    $.getJSON('https://api.etherscan.io/api?module=proxy&action=eth_blockNumber&apikey=CNAVZM8H9J3Q2HWRR553Q7BYANFZRGK79J', function(data) {
         var hexblock = data.result;
         ethlastblock = parseInt(hexblock);
         console.log("GET LAST BLOCK FROM ETHERSCAN:", ethlastblock);
+        callback();
     });
- });
+ };
 
 // Network API
 function ETHAPI() {
-    return 'https://api.nanopool.org/v1/eth/blocks/0/1';
+    return 'https://api.etherscan.io/api?module=proxy&action=eth_getBlockByNumber&tag=0x10d4f&boolean=true&apikey=CNAVZM8H9J3Q2HWRR553Q7BYANFZRGK79J';
 }
 
 function ETCAPI() {
@@ -466,14 +467,18 @@ function ETCAPI() {
 $(function() {
 
    $.getJSON(ETHAPI(), function(data) {
-		   document.getElementById("ethdiff").innerHTML = data.data[0].difficulty;
+           var hexdiff = data.result.difficulty;
+           var decdiff = parseInt(hexdiff);
+		   document.getElementById("ethdiff").innerHTML = decdiff;
            document.getElementById("ethlastblock").innerHTML = ethlastblock;
            console.log("Upis u tabelu", ethlastblock);
-		  $("#ethlastblock").attr("href", "https://etherscan.io/block/" + data.data[0].number)
+		  $("#ethlastblock").attr("href", "https://etherscan.io/block/" + ethlastblock)
 
    });
 
 });
+
+GetLastBlockFromEth(ETHAPI);
 
 //ETC difficulty and last block
 $(function() {
