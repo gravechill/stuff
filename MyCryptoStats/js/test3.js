@@ -466,10 +466,19 @@ function ETCAPI() {
 function WriteDiff() {
 
    $.getJSON("https://api.etherscan.io/api?module=proxy&action=eth_getBlockByNumber&tag=" + ethhexblock + "&boolean=true&apikey=CNAVZM8H9J3Q2HWRR553Q7BYANFZRGK79J", function(data) {
-            console.log(ethhexblock);
            var hexdiff = data.result.difficulty;
            var decdiff = parseInt(hexdiff);
-		   document.getElementById("ethdiff").innerHTML = decdiff;
+           var setdiff = decdiff;
+           var convdiff
+                $(function (setdiff, decimals) {
+                if(decdiff == 0) return '0 Bytes';
+                var k = 1000,
+                dm = decimals || 3,
+                sizes = [ 'd', 'H', 'kH', 'MH', 'GH', 'TH', 'PH', 'EH', 'ZH', 'YH'],
+                i = Math.floor(Math.log(decdiff) / Math.log(k));
+                convdiff = parseFloat((decdiff / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+                document.getElementById("ethdiff").innerHTML = convdiff;
+         })
            document.getElementById("ethlastblock").innerHTML = ethlastblock;
 		  $("#ethlastblock").attr("href", "https://etherscan.io/block/" + ethlastblock)
 
