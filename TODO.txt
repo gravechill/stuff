@@ -1,5 +1,5 @@
 // Fixes and updates ASAP
-* Show difficulty number appropriately (Network Stats)
++ Show difficulty number appropriately (Network Stats)
 + Fix callback (execute function after getting API data, instead of setting time delay)
 + Replace API to get last block number (get netwrok last block, not last block mined by pool)
 + Extract difficulty from last network block (use etherscan.io, nanopool might have same thing if block requested by number)

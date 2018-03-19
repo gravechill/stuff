@@ -490,7 +490,18 @@ function WriteDiff() {
 $(function() {
 
    $.getJSON(ETCAPI(), function(data) {
-		   document.getElementById("etcdiff").innerHTML = data.data[0].difficulty;
+       var diff = data.data[0].difficulty;
+       var diff2 = diff
+       var convdiff
+       $(function (diff2, decimals) {
+        if(diff == 0) return '0 Bytes';
+        var k = 1000,
+        dm = decimals || 3,
+        sizes = [ 'd', 'H', 'kH', 'MH', 'GH', 'TH', 'PH', 'EH', 'ZH', 'YH'],
+        i = Math.floor(Math.log(diff) / Math.log(k));
+        convdiff = parseFloat((diff / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+        document.getElementById("etcdiff").innerHTML = convdiff;
+ })
 		   document.getElementById("etclastblock").innerHTML = data.data[0].number;
 		   $("#etclastblock").attr("href", "https://gastracker.io/block/" + data.data[0].number)
 
