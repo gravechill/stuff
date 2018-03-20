@@ -25,12 +25,19 @@ function GetETCballance(callback) {
    var result;
    var balance;
 
-   $.getJSON('http://api.gastracker.io/addr/0x66bd122E46Ed6F4F2A905CBe968111E8E4490899', function(data) {
-       //$.each(data.result, function(i, f) {
-          var balance = data.ether;
-           //$(balance).appendTo("#accbalance");
-           document.getElementById("etc1ballance").innerHTML = data.balance.ether;
-           callback();
+   $.ajax({
+    dataType: 'jsonp',
+    url: "https://api.gastracker.io/v1/addr/0x66bd122E46Ed6F4F2A905CBe968111E8E4490899",
+    type: "GET",
+    success: function (data) {
+        var balance = data.ether;
+        document.getElementById("etc1ballance").innerHTML = data.balance.ether;
+        callback();
+    },
+    error: function () {
+        console.log("error")
+    }
+
      //});
 
    });
