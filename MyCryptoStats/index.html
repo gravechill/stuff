@@ -19,6 +19,29 @@
     </head>
 
     <body>
+        <!-- Side nav -->
+        <div id="mySidenav" class="sidenav">
+            <div href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+                <div class="iks1"></div>
+                <div class="iks2"></div>
+            </div>
+            <div>ETH Wallet Address</div>
+            <input placeholder="0x12dfa342352q341a..."></input>
+            <button>Save</button>
+            <div>ETC Wallet Address</div>
+            <input placeholder="0x12dfa342352q341a..."></input>
+            <button>Save</button>
+            <div>Mining</div>
+        </div>
+
+        <div onclick="openNav()" class="options">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <!-- Side Nav End -->
+
+        <div id=content>
         <div id=Wallets>
 
             <TABLE>
@@ -244,7 +267,8 @@
 					</tr>
 				</table>
 			</div>
-		</div>
+        </div>
+    </div>
     </body>
 
 </html>
