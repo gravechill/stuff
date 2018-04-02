@@ -1,3 +1,72 @@
+//Crypto To Fiat
+GetBTCprices();
+GetZECprices();
+GetMoneroprices();
+GetSiaprices();
+
+//Crypto to Crypto
+BtcToEth();
+BtcToEtc();
+BtcToZec();
+BtcToMonero();
+EthToBtc();
+EthToEtc();
+EthToZec();
+EthToMonero();
+EthToSia();
+EtcToBtc();
+EtcToEth();
+EtcToZec();
+EtcToMonero();
+EtcToSia();
+ZecToBtc();
+ZecToEth();
+ZecToEtc();
+ZecToMonero();
+ZecToSia();
+MoneroToBtc();
+MoneroToEth();
+MoneroToEtc();
+MoneroToZec();
+MoneroToSia();
+
+$(function() {
+    setInterval(function() {
+        GetETHprices();
+        GetETCprices();
+        GetBTCprices();
+        GetZECprices();
+        GetMoneroprices();
+        GetSiaprices();
+        BtcToEth();
+        BtcToEtc();
+        BtcToZec();
+        BtcToMonero();
+        EthToBtc();
+        EthToEtc();
+        EthToZec();
+        EthToMonero();
+        EthToSia();
+        EtcToBtc();
+        EtcToEth();
+        EtcToZec();
+        EtcToMonero();
+        EtcToSia();
+        ZecToBtc();
+        ZecToEth();
+        ZecToEtc();
+        ZecToMonero();
+        ZecToSia();
+        MoneroToBtc();
+        MoneroToEth();
+        MoneroToEtc();
+        MoneroToZec();
+        MoneroToSia();
+        console.log("Got it boi")
+
+}, 5000);
+})
+
 //WALLETS
 //ETH Wallet 1 Ballance
  function GetETHballance(callback) {
@@ -35,7 +104,7 @@ function GetETCballance(callback) {
         callback();
     },
     error: function () {
-        console.log("error")
+        console.log("error on getting ETC Ballance API")
     }
 
      //});
@@ -70,7 +139,7 @@ function GetETHprices() {
 GetETHballance(GetETHprices);
 
 //BTC to USD and EUR
-    $(function() {
+    function GetBTCprices() {
 
 
    var usd;
@@ -86,7 +155,7 @@ GetETHballance(GetETHprices);
 
    });
 
-});
+};
 
 //ETC to USD and EUR
 function GetETCprices() {
@@ -98,7 +167,7 @@ function GetETCprices() {
    $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=ETC&tsyms=USD,EUR', function(data) {
 		  var etc_balance;
 		   document.getElementById("etcusd").innerHTML = data.USD;
-		   document.getElementById("etceur").innerHTML = data.USD;
+		   document.getElementById("etceur").innerHTML = data.EUR;
 		       etc_balance = document.getElementById("etc1ballance").innerHTML;
 			    var usd = etc_balance * data.USD;
 				var calculatedUsd = usd.toFixed(2);
@@ -113,7 +182,7 @@ function GetETCprices() {
    GetETCballance(GetETCprices);
 
 //ZEC to USD and EUR
-    $(function() {
+    function GetZECprices() {
 
 
    var usd;
@@ -129,10 +198,10 @@ function GetETCprices() {
 
    });
 
-});
+};
 
 //Monero (XMR) to USD and EUR
-    $(function() {
+    function GetMoneroprices() {
 
 
    var usd;
@@ -148,10 +217,10 @@ function GetETCprices() {
 
    });
 
-});
+};
 
 //SIA Coin (SC) to USD and EUR
-    $(function() {
+    function GetSiaprices() {
 
 
    var usd;
@@ -167,12 +236,12 @@ function GetETCprices() {
 
    });
 
-});
+};
 
 
 //CRYPTO TO CRYPTO TABLE
 //BTC to ETH
-    $(function() {
+    function BtcToEth() {
 
    $.getJSON('https://shapeshift.io/rate/btc_eth', function(data) {
        //$.each(data.result, function(i, f) {
@@ -183,10 +252,10 @@ function GetETCprices() {
 
    });
 
-});
+};
 
 //BTC to ETC
-    $(function() {
+    function BtcToEtc() {
 
    $.getJSON('https://shapeshift.io/rate/btc_etc', function(data) {
           var result = data.rate;
@@ -194,10 +263,10 @@ function GetETCprices() {
 
    });
 
-});
+};
 
 //BTC to ZEC
-    $(function() {
+    function BtcToZec() {
 
    $.getJSON('https://shapeshift.io/rate/btc_zec', function(data) {
           var result = data.rate;
@@ -205,10 +274,10 @@ function GetETCprices() {
 
    });
 
-});
+};
 
 //BTC to Monero
-    $(function() {
+    function BtcToMonero() {
 
    $.getJSON('https://shapeshift.io/rate/btc_xmr', function(data) {
           var result = data.rate;
@@ -216,10 +285,10 @@ function GetETCprices() {
 
    });
 
-});
+};
 
 //ETH to BTC
-    $(function() {
+    function EthToBtc() {
 
    $.getJSON('https://shapeshift.io/rate/eth_btc', function(data) {
           var result = data.rate;
@@ -227,10 +296,10 @@ function GetETCprices() {
 
    });
 
-});
+};
 
 //ETH to ETC
-    $(function() {
+    function EthToEtc() {
 
    $.getJSON('https://shapeshift.io/rate/eth_etc', function(data) {
           var result = data.rate;
@@ -238,10 +307,10 @@ function GetETCprices() {
 
    });
 
-});
+};
 
 //ETH to ZEC
-    $(function() {
+    function EthToZec() {
 
    $.getJSON('https://shapeshift.io/rate/eth_zec', function(data) {
           var result = data.rate;
@@ -249,10 +318,10 @@ function GetETCprices() {
 
    });
 
-});
+};
 
 //ETH to Monero
-    $(function() {
+    function EthToMonero() {
 
    $.getJSON('https://shapeshift.io/rate/eth_xmr', function(data) {
           var result = data.rate;
@@ -260,10 +329,10 @@ function GetETCprices() {
 
    });
 
-});
+};
 
 //ETH to SC
-    $(function() {
+    function EthToSia() {
 
    $.getJSON('https://shapeshift.io/rate/eth_sc', function(data) {
           var result = data.rate;
@@ -271,10 +340,10 @@ function GetETCprices() {
 
    });
 
-});
+};
 
 //ETC to BTC
-    $(function() {
+    function EtcToBtc() {
 
    $.getJSON('https://shapeshift.io/rate/etc_btc', function(data) {
           var result = data.rate;
@@ -282,21 +351,23 @@ function GetETCprices() {
 
    });
 
-});
+};
 
 //ETC to ETH
-    $(function() {
+    function EtcToEth() {
 
-   $.getJSON('https://shapeshift.io/rate/etc_eth', function(data) {
+         $.getJSON('https://shapeshift.io/rate/etc_eth', function(data) {
+       
+        
           var result = data.rate;
-		   document.getElementById("etc2eth").innerHTML = result;
+           document.getElementById("etc2eth").innerHTML = result;
+           
+        });
 
-   });
-
-});
+};
 
 //ETC to ZEC
-    $(function() {
+    function EtcToZec() {
 
    $.getJSON('https://shapeshift.io/rate/etc_zec', function(data) {
           var result = data.rate;
@@ -304,10 +375,10 @@ function GetETCprices() {
 
    });
 
-});
+};
 
 //ETC to Monero
-    $(function() {
+    function EtcToMonero() {
 
    $.getJSON('https://shapeshift.io/rate/etc_xmr', function(data) {
           var result = data.rate;
@@ -315,10 +386,10 @@ function GetETCprices() {
 
    });
 
-});
+};
 
 //ETC to SIA
-    $(function() {
+    function EtcToSia() {
 
    $.getJSON('https://shapeshift.io/rate/etc_sc', function(data) {
           var result = data.rate;
@@ -327,10 +398,10 @@ function GetETCprices() {
 
    });
 
-});
+};
 
 //ZEC to BTC
-    $(function() {
+    function ZecToBtc() {
 
    $.getJSON('https://shapeshift.io/rate/zec_btc', function(data) {
           var result = data.rate;
@@ -339,10 +410,10 @@ function GetETCprices() {
 
    });
 
-});
+};
 
 //ZEC to ETH
-    $(function() {
+    function ZecToEth() {
 
    $.getJSON('https://shapeshift.io/rate/zec_eth', function(data) {
           var result = data.rate;
@@ -351,10 +422,10 @@ function GetETCprices() {
 
    });
 
-});
+};
 
 //ZEC to ETC
-    $(function() {
+    function ZecToEtc() {
 
    $.getJSON('https://shapeshift.io/rate/zec_etc', function(data) {
           var result = data.rate;
@@ -363,10 +434,10 @@ function GetETCprices() {
 
    });
 
-});
+};
 
 //ZEC to Monero
-    $(function() {
+    function ZecToMonero() {
 
    $.getJSON('https://shapeshift.io/rate/zec_xmr', function(data) {
           var result = data.rate;
@@ -375,10 +446,10 @@ function GetETCprices() {
 
    });
 
-});
+};
 
 //ZEC to Sia
-    $(function() {
+    function ZecToSia() {
 
    $.getJSON('https://shapeshift.io/rate/zec_sc', function(data) {
           var result = data.rate;
@@ -387,10 +458,10 @@ function GetETCprices() {
 
    });
 
-});
+};
 
 //Monero to BTC
-    $(function() {
+    function MoneroToBtc() {
 
    $.getJSON('https://shapeshift.io/rate/xmr_btc', function(data) {
           var result = data.rate;
@@ -399,10 +470,10 @@ function GetETCprices() {
 
    });
 
-});
+};
 
 //Monero to ETH
-    $(function() {
+    function MoneroToEth() {
 
    $.getJSON('https://shapeshift.io/rate/xmr_eth', function(data) {
           var result = data.rate;
@@ -411,10 +482,10 @@ function GetETCprices() {
 
    });
 
-});
+};
 
 //Monero to ETC
-    $(function() {
+    function MoneroToEtc() {
 
    $.getJSON('https://shapeshift.io/rate/xmr_etc', function(data) {
           var result = data.rate;
@@ -423,10 +494,10 @@ function GetETCprices() {
 
    });
 
-});
+};
 
 //Monero to ZEC
-    $(function() {
+    function MoneroToZec() {
 
    $.getJSON('https://shapeshift.io/rate/xmr_zec', function(data) {
           var result = data.rate;
@@ -435,10 +506,10 @@ function GetETCprices() {
 
    });
 
-});
+};
 
 //Monero to sia
-    $(function() {
+    function MoneroToSia() {
 
    $.getJSON('https://shapeshift.io/rate/xmr_sc', function(data) {
           var result = data.rate;
@@ -446,7 +517,7 @@ function GetETCprices() {
 		   document.getElementById("xmr2sia").innerHTML = result;
 
    });
-});
+};
 
 //Etherscan LastBlock
 var ethlastblock
@@ -481,7 +552,7 @@ function WriteDiff() {
                 if(decdiff == 0) return '0 Bytes';
                 var k = 1000,
                 dm = decimals || 3,
-                sizes = [ 'd', 'H', 'kH', 'MH', 'GH', 'TH', 'PH', 'EH', 'ZH', 'YH'],
+                sizes = [ 'H', 'kH', 'MH', 'GH', 'TH', 'PH', 'EH', 'ZH', 'YH'],
                 i = Math.floor(Math.log(decdiff) / Math.log(k));
                 convdiff = parseFloat((decdiff / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
                 document.getElementById("ethdiff").innerHTML = convdiff;
@@ -504,7 +575,7 @@ $(function() {
         if(diff == 0) return '0 Bytes';
         var k = 1000,
         dm = decimals || 3,
-        sizes = [ 'd', 'H', 'kH', 'MH', 'GH', 'TH', 'PH', 'EH', 'ZH', 'YH'],
+        sizes = [ 'H', 'kH', 'MH', 'GH', 'TH', 'PH', 'EH', 'ZH', 'YH'],
         i = Math.floor(Math.log(diff) / Math.log(k));
         convdiff = parseFloat((diff / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
         document.getElementById("etcdiff").innerHTML = convdiff;

@@ -3,7 +3,7 @@
 + Fix callback (execute function after getting API data, instead of setting time delay)
 + Replace API to get last block number (get netwrok last block, not last block mined by pool)
 + Extract difficulty from last network block (use etherscan.io, nanopool might have same thing if block requested by number)
-+ Hyperlink wallets to blockchain explorer
+* Hyperlink wallets to blockchain explorer
 + Make hyperlinks open a new tab
 * CSS on hyperlinks
 
