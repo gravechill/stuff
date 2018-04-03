@@ -155,6 +155,10 @@ col.hover {
     margin-left: 50px;
 }
 
+.closebtn:hover {
+    cursor: pointer;
+}
+
 #content {
     transition: margin-left .5s;
     padding: 20px;
@@ -176,7 +180,7 @@ col.hover {
 .iks1 {
 	width: 35px;
     height: 5px;
-    background-color: #333;
+    background-color: whitesmoke;
     -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
 	transform: rotate(-45deg) translate(-9px, 6px) ;
 	position: relative;
@@ -187,10 +191,53 @@ col.hover {
 .iks2 {
 	width: 35px;
     height: 5px;
-    background-color: #333;	
+    background-color: whitesmoke;	
     -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
 	transform: rotate(45deg) translate(-8px, -8px) ;
 	position: relative;
     top: 45px;
     right: 1px;
+}
+
+.OptionsCaption1, .OptionsCaption2 {
+    font-family: "Open Sans";
+    font-size: 30px;
+    color: whitesmoke;
+    margin-left: 10px;
+}
+
+.OptionsCaption1 {
+    margin-top: 20px;
+}
+
+.WalletsInput {
+    height: 30px;
+    border: none;
+    width: 78%;
+    background: whitesmoke;
+    position: relative;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    font-family: "Open Sans";
+    color: black;
+    font-size: 16px;
+    padding-left: 8px;
+}
+
+.WalletSaveBtn {
+    height: 32px;
+    width: 15%;
+    background: whitesmoke;
+    border: none;
+    color: black;
+    position: absolute;
+    margin-left: 3px;
+}
+
+.WalletSaveBtn:hover {
+    background: grey;
+    color: white;
+}
+
+#MiningCaption {
 }
