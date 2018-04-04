@@ -62,7 +62,6 @@ $(function() {
         MoneroToEtc();
         MoneroToZec();
         MoneroToSia();
-        console.log("Got it boi")
 
 }, 5000);
 })
@@ -75,7 +74,7 @@ $(function() {
    var result;
    var balance;
 
-   $.getJSON('https://api.ethplorer.io/getAddressInfo/0x542e34E4D8D028172184D2938aBEe77E6bcDC12d?apiKey=freekey', function(data) {
+   $.getJSON('https://api.ethplorer.io/getAddressInfo/' + localStorage.EthWallet + '?apiKey=freekey', function(data) {
        //$.each(data.result, function(i, f) {
           var balance = data.ETH.balance;
            //$(balance).appendTo("#accbalance");
@@ -96,7 +95,7 @@ function GetETCballance(callback) {
 
    $.ajax({
     dataType: 'jsonp',
-    url: "https://api.gastracker.io/v1/addr/0x66bd122E46Ed6F4F2A905CBe968111E8E4490899",
+    url: "https://api.gastracker.io/v1/addr/" + localStorage.EtcWallet,
     type: "GET",
     success: function (data) {
         var balance = data.ether;
@@ -614,13 +613,13 @@ function ETCPoolStats() {
 		document.getElementById("ApproxEarn").innerHTML = data.data.month.coins + " ETC";
 	})
 	
-	$.getJSON('https://api.nanopool.org/v1/etc/user/0x66bd122e46ed6f4f2a905cbe968111e8e4490899', function(data) {
+	$.getJSON('https://api.nanopool.org/v1/etc/user/' + localStorage.EtcWallet , function(data) {
 		document.getElementById("PoolBalance").innerHTML = data.data.balance;
 		document.getElementById("CalculatedHashrate").innerHTML = data.data.hashrate;
 		document.getElementById("AvarageHashrate").innerHTML = data.data.avgHashrate.h12;
 	})
 	
-	$.getJSON('https://api.nanopool.org/v1/etc/reportedhashrate/0x66bd122e46ed6f4f2a905cbe968111e8e4490899', function(data) {
+	$.getJSON('https://api.nanopool.org/v1/etc/reportedhashrate/' + localStorage.EtcWallet, function(data) {
 		document.getElementById("ReportedHashrate").innerHTML = data.data;
 	})
 }
@@ -657,4 +656,21 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("content").style.marginLeft = "0";
+}
+
+/* Options Menu */
+
+var EthWallet1
+var EtcWallet1
+
+function SaveEthWallet() {
+    EthWallet1 = $('#EthWalletInput').val();
+    localStorage.EthWallet = EthWallet1;
+    GetETHballance(GetETHprices);
+}
+
+function SaveEtcWallet() {
+    EtcWallet1 = $('#EtcWalletInput').val();
+    localStorage.EtcWallet = EtcWallet1;
+    GetETCballance(GetETCprices);
 }
